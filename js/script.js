@@ -1,27 +1,36 @@
 console.log('JS OK');
 
-// Chiedo quantità km e anni dell'utente
-const kmTrip = parseInt(prompt('Quanti km devi percorrere?', 100).trim());
-console.log('km viaggio:', kmTrip);
+// Chiedo quantità km e anni e nome dell'utente
+const name = document.getElementById('name');
+const km = document.getElementById('km');
+const age = document.getElementById('age');
+const button = document.getElementById('button');
+const clearBtn = document.getElementById('clearBtn');
 
-const userAge = prompt('Quanti anni hai?', 66).trim();
-console.log('età:', userAge);
+button.addEventListener('click', function () {
 
-// Calcolo il prezzo del biglietto
-let priceTicket = kmTrip * 0.21;
-console.log('prezzo biglietto:', priceTicket);
+    const userName = name.value.trim();
+    const userKm = parseInt(km.value);
+    const userAge = age.value;
 
-//Applico possibili sconti
-if (userAge < 18) {
-    priceTicket -= priceTicket * 20 / 100;
-    console.log('prezzo biglietto scontato minorenne:', priceTicket);
-} else if (userAge > 65) {
-    priceTicket -= priceTicket * 40 / 100;
-    console.log('prezzo biglietto scontato over:', priceTicket);
-}
 
-//Scrivo il risultato
-let messagePrice = document.getElementById('message');
+    // Calcolo il prezzo del biglietto
+    let priceTicket = userKm * 0.21;
 
-// messagePrice.innerText = 'Il prezzo del tuo biglietto è di €' + priceTicket.toFixed(2);
-messagePrice.innerHTML = `Il prezzo del tuo biglietto è di <strong> € ${priceTicket.toFixed(2)}</strong>`;
+    //Applico possibili sconti
+    if (userAge === 'minor') {
+        priceTicket -= priceTicket * 20 / 100;
+    } else if (userAge === 'over') {
+        priceTicket -= priceTicket * 40 / 100;
+    }
+
+    console.log(userAge, priceTicket.toFixed(2));
+    //Scrivo il risultato
+    // let messagePrice = document.getElementById('message');
+})
+
+clearBtn.addEventListener('click', function () {
+    name.value = '';
+    km.value = '';
+    age.value = 'choose';
+})
