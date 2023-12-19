@@ -13,7 +13,18 @@ button.addEventListener('click', function () {
     const userKm = parseInt(km.value);
     const userAge = age.value;
 
-
+    if (userName === '') {
+        console.log('sei quiiiii nome');
+        return;
+    }
+    if (isNaN(userKm)) {
+        console.log('sei quiiiii km');
+        return;
+    }
+    if (userAge === 'choose') {
+        console.log('sei quiiiii età');
+        return;
+    }
     // Calcolo il prezzo del biglietto
     let priceTicket = userKm * 0.21;
 
@@ -24,9 +35,7 @@ button.addEventListener('click', function () {
         priceTicket -= priceTicket * 40 / 100;
     }
 
-    console.log(userAge, priceTicket.toFixed(2));
-    //Scrivo il risultato
-    // let messagePrice = document.getElementById('message');
+    console.log(userName, userAge, priceTicket.toFixed(2));
 })
 
 clearBtn.addEventListener('click', function () {
