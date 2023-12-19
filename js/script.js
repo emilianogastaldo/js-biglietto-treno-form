@@ -65,7 +65,7 @@ button.addEventListener('click', function () {
     ticketOffer.innerText = offer;
     ticketWagon.innerText = wagonNumber;
     ticketCP.innerText = cpNumber;
-    ticketPrice.innerText = priceTicket.toFixed(2);
+    ticketPrice.innerText = priceTicket.toFixed(2) + '€';
     ticketPrev.classList.remove('d-none');
 })
 
