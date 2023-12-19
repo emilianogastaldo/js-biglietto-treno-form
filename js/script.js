@@ -1,11 +1,13 @@
 console.log('JS OK');
 
-// Chiedo quantità km e anni e nome dell'utente
+// Inizializzo le const per i dati utente
 const name = document.getElementById('name');
 const km = document.getElementById('km');
 const age = document.getElementById('age');
+// Inizializzo i bottoni
 const button = document.getElementById('button');
 const clearBtn = document.getElementById('clearBtn');
+// Inizializzo i dati da inserire nel biglietto
 const ticketMessage = document.getElementById('message');
 const ticketName = document.getElementById('ticketName');
 const ticketOffer = document.getElementById('ticketOffer');
@@ -18,6 +20,7 @@ const ticketPrev = document.getElementById('ticketPrev');
 
 button.addEventListener('click', function () {
 
+    //Salvo le info dell'utente e do di default il tipo di biglietto
     const userName = name.value.trim();
     const userKm = parseInt(km.value);
     const userAge = age.value;
@@ -66,6 +69,7 @@ button.addEventListener('click', function () {
     ticketPrev.classList.remove('d-none');
 })
 
+//Creo il button per ripulire tutto
 clearBtn.addEventListener('click', function () {
     name.value = '';
     km.value = '';
