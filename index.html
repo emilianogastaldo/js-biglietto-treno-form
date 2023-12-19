@@ -5,22 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <!-- Importo bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css'
+        integrity='sha512-r0fo0kMK8myZfuKWk9b6yY8azUnHCPhgNz/uWDl2rtMdWJlk7gmd9socvGZdZzICwAkMgfTkVrplDahQ07Gi0A=='
+        crossorigin='anonymous' />
+    <!-- Collego il mio foglio di stile -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- collego il mio foglio di js -->
     <script defer src="js/script.js"></script>
 </head>
 
 <body>
-    <input type="text" name="name" id="name" placeholder="Inserisci il tuo nome e cognome">
-    <input type="text" name="kmTrip" id="km" placeholder="Inserisci quanti chilometri">
-    <select name="age" id="age">
-        <option value="choose">Quanti anni hai?</option>
-        <option value="minor">Meno di 18 anni</option>
-        <option value="adult">Tra 18 e 65 anni</option>
-        <option value="over">Oltre 65 anni</option>
-    </select>
-    <button type="button" id="button">Genera</button>
-    <button type="button" id="clearBtn">Clear</button>
+    <div class="container">
+        <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+
+        <form>
+            <div>
+                <label for="name">Nome e Cognome</label>
+                <input type="text" name="name" id="name" placeholder="Inserisci il tuo nome e cognome">
+            </div>
+            <div>
+                <label for="kmTrip">Km da percorrere</label>
+                <input type="text" name="kmTrip" id="km" placeholder="Inserisci quanti chilometri">
+            </div>
+            <div>
+                <label for="age">Fascia d'età</label>
+                <select name="age" id="age">
+                    <option value="choose">Quanti anni hai?</option>
+                    <option value="minor">Meno di 18 anni</option>
+                    <option value="adult">Tra 18 e 65 anni</option>
+                    <option value="over">Oltre 65 anni</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" id="button">Genera</button>
+                <button type="button" id="clearBtn">Clear</button>
+            </div>
+        </form>
+        <hr>
+        <section id="ticketPrev" class="d-none">
+            <h2>IL TUO BIGLIETTO</h2>
+            <div>
+                <h4>DETTAGLIO PASSEGGERI</h4>
+                <table class="table table-borderless">
+                    <thead>
+                        <th>NOME PASSEGGERO</th>
+                        <th>Offerta</th>
+                        <th>Carrozza</th>
+                        <th>Codice CP</th>
+                        <th>Costo Biglietto</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th id="ticketName"></th>
+                            <td id="ticketOffer"></td>
+                            <td id="ticketWagon"></td>
+                            <td id="ticketCP"></td>
+                            <td id="ticketPrice"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>
